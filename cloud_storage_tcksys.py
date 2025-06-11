@@ -1,5 +1,5 @@
 # Author: Saravanan Nadanasabesan
-# Date: 2025-05-22
+# Date: 2025-06-11
 # Description: Simulated cloud storage tracking system.
 # Features:
 # 1. Create a new account.
@@ -85,10 +85,10 @@ def main():
     usernames = []
     storage_space = []
 
-# Initialize to something other than "5"
+# Initialize the menu choice to enter the loop"
     choice = ""  
     
-# Uses while choice != "5" to control the loop.
+# Uses while loop to control the loop until the user selects option "5".
     while choice != "5":
         print("\nMenu:")
         print("1. Create a new account.")
