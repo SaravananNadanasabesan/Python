@@ -1,19 +1,20 @@
-"""
-Simulated cloud storage tracking system.
-Features:
-1. Create a new account.
-2. Delete an account.
-3. Upload file.
-4. List accounts.
-5. Exit.
-"""
+# Author: Saravanan Nadanasabesan
+# Date: 2025-05-22
+# Description: Simulated cloud storage tracking system.
+# Features:
+# 1. Create a new account.
+# 2. Delete an account.
+# 3. Upload file.
+# 4. List accounts.
+# 5. Exit.
+
 
 def create_account(usernames, storage_space):
-    """
-    Creates a new account.
-    Username must be unique and non-blank.
-    Storage must be a positive number.
-    """
+    
+# Creates a new account.
+# Username must be unique and non-blank.
+# Storage must be a positive number.
+    
     username = input("Enter a username: ").strip()
     if not username:
         print("Username cannot be blank!")
@@ -34,9 +35,9 @@ def create_account(usernames, storage_space):
     
 
 def delete_account(usernames, storage_space):
-    """
-    Deletes an account by username.
-    """
+    
+# Deletes an account by username.
+
     username = input("Enter the username to delete: ").strip()
     if username in usernames:
         index = usernames.index(username)
@@ -48,9 +49,9 @@ def delete_account(usernames, storage_space):
         
 
 def upload_file(usernames, storage_space):
-    """
-    Uploads a file for a given user if enough storage exists.
-    """
+
+# Uploads a file for a given user if enough storage exists.
+
     username = input("Enter the username: ").strip()
     if username not in usernames:
         print("User not found.")
@@ -75,9 +76,8 @@ def upload_file(usernames, storage_space):
         
 
 def list_accounts(usernames, storage_space):
-    """
-    Lists all accounts and their available storage.
-    """
+#  Lists all accounts and their available storage.
+
     if not usernames:
         print("No accounts to display.")
         return
@@ -88,14 +88,15 @@ def list_accounts(usernames, storage_space):
         
 
 def main():
-    """
-    Main function to display the menu and handle user choices.
-    Uses while choice != "5" to control the loop.
-    """
+    
+# Main function to display the menu and handle user choices.
+# Uses while choice != "5" to control the loop.
+
     usernames = []
     storage_space = []
 
-    choice = ""  # Initialize to something other than "5"
+# Initialize to something other than "5"
+    choice = ""  
 
     while choice != "5":
         print("\nMenu:")
@@ -120,5 +121,6 @@ def main():
         else:
             print("Invalid choice. Please enter a number from 1 to 5.")
 
+# Main method 
 if __name__ == "__main__":
     main()
