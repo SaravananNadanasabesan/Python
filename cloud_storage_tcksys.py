@@ -8,13 +8,10 @@
 # 4. List accounts.
 # 5. Exit.
 
-
+# Creates a new account.
 def create_account(usernames, storage_space):
     
-# Creates a new account.
-# Username must be unique and non-blank.
-# Storage must be a positive number.
-    
+# Username must be unique and non-blank.   
     username = input("Enter a username: ").strip()
     if not username:
         print("Username cannot be blank!")
@@ -24,6 +21,7 @@ def create_account(usernames, storage_space):
         print("Username already exists. Choose another username.")
         return
 
+# Storage must be a positive number.
     storage = input("Enter available storage (positive number): ").strip()
     if not storage.isdigit() or int(storage) <= 0:
         print("Invalid storage space. It must be a positive number.")
@@ -33,11 +31,9 @@ def create_account(usernames, storage_space):
     storage_space.append(int(storage))
     print(f"Account created for '{username}' with {storage} MB of storage.")
     
-
+# Deletes an account by username.
 def delete_account(usernames, storage_space):
     
-# Deletes an account by username.
-
     username = input("Enter the username to delete: ").strip()
     if username in usernames:
         index = usernames.index(username)
@@ -47,10 +43,8 @@ def delete_account(usernames, storage_space):
     else:
         print("User not found. No account deleted.")
         
-
-def upload_file(usernames, storage_space):
-
 # Uploads a file for a given user if enough storage exists.
+def upload_file(usernames, storage_space):
 
     username = input("Enter the username: ").strip()
     if username not in usernames:
@@ -74,9 +68,8 @@ def upload_file(usernames, storage_space):
     else:
         print("Not enough storage to upload the file.")
         
-
-def list_accounts(usernames, storage_space):
 #  Lists all accounts and their available storage.
+def list_accounts(usernames, storage_space):
 
     if not usernames:
         print("No accounts to display.")
@@ -86,18 +79,16 @@ def list_accounts(usernames, storage_space):
     for i in range(len(usernames)):
         print(f"- {usernames[i]}: {storage_space[i]} MB available")
         
-
+# Main function to display the menu and handle user choices.
 def main():
     
-# Main function to display the menu and handle user choices.
-# Uses while choice != "5" to control the loop.
-
     usernames = []
     storage_space = []
 
 # Initialize to something other than "5"
     choice = ""  
-
+    
+# Uses while choice != "5" to control the loop.
     while choice != "5":
         print("\nMenu:")
         print("1. Create a new account.")
@@ -121,6 +112,6 @@ def main():
         else:
             print("Invalid choice. Please enter a number from 1 to 5.")
 
-# Main method 
+# Calling Main method 
 if __name__ == "__main__":
     main()
