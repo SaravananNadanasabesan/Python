@@ -14,18 +14,18 @@ while exit_choice != "yes":
     dept1_users = int(input("Enter the number of users in Department 1: "))
     dept2_users = int(input("Enter the number of users in Department 2: "))
 
-    total_entered = dept1_users + dept2_users
+    total_users_entered = dept1_users + dept2_users
 
-    if total_entered > MAX_TOTAL_USERS:
+    if total_users_entered > MAX_TOTAL_USERS:
         print("You have exceeded the maximum allowable users.")
-    elif total_entered == MAX_TOTAL_USERS:
+    elif total_users_entered == MAX_TOTAL_USERS:
         print("There are no additional users allowed.")
     else:
-        remaining_users = MAX_TOTAL_USERS - total_entered
+        remaining_users = MAX_TOTAL_USERS - total_users_entered
         print(f"There are {remaining_users} users still available.")
 
     # Display users for each department
-    remaining_for_dept3 = MAX_TOTAL_USERS - (dept1_users + dept2_users)
+    remaining_for_dept3 = MAX_TOTAL_USERS - total_users_entered
     print(f"Department 1 users: {dept1_users}")
     print(f"Department 2 users: {dept2_users}")
     print(f"Department 3 available users: {remaining_for_dept3}")
